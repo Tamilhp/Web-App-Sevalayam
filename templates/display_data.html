@@ -29,26 +29,23 @@
     <thead>
       <tr>
       <tr valign="top">
-        <th>S NO</th>
         <th>Name</th>
         <th>Mobile No 1</th>
         <th>Mobile No 2</th>
         <th>Occasion</th>
         <th>Occasion Date</th>
-        <th>Address</th>
       </tr>
     </thead>
 
     </tr>
+    {% for row in form_data %}
     <tr valign="top" class="Failure">
-      {% for row in form_data %}
       <td>{{row[0]}}</td>
       <td>{{row[1]}}</td>
       <td>{{row[2]}}</td>
       <td>{{row[3]}}</td>
       <td>{{row[4]}}</td>
-      <td>{{row[5]}}</td>
-      <td>{{row[6]}}</td>
-      {% endfor %}
     </tr>
+    {% endfor %}
+    <br>
   </table>
