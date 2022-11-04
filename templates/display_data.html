@@ -1,16 +1,54 @@
-<tr>
-    <th>Name</th>
-    <th>Mobile Number</th>
-    <th>Occasion</th>
-    <th>Occasion Date</th>
+<!DOCTYPE html>
+<html lang="en">
 
-  </tr>
+<head>
+  <title>SANKARA SEVALAYAM</title>
+  <style>
+    table,
+    th,
+    td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
 
-  <tr>
-    {% for row in data %}
-       <td>{{row[0]}}</td>
-       <td>{{row[1]}}</td> 
-       <td>{{row[2]}}</td>
-       <td>{{row[3]}}</td>
-    {% endfor %}
-</tr>
+    .large_font {
+      font-size: 24px;
+    }
+
+    .small_font {
+      font-size: 16px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>SANKARA SEVALAYAM</h1>
+  <p class="large_font">List of People on the given date and month</p>
+
+  <table>
+    <thead>
+      <tr>
+      <tr valign="top">
+        <th>S NO</th>
+        <th>Name</th>
+        <th>Mobile No 1</th>
+        <th>Mobile No 2</th>
+        <th>Occasion</th>
+        <th>Occasion Date</th>
+        <th>Address</th>
+      </tr>
+    </thead>
+
+    </tr>
+    <tr valign="top" class="Failure">
+      {% for row in form_data %}
+      <td>{{row[0]}}</td>
+      <td>{{row[1]}}</td>
+      <td>{{row[2]}}</td>
+      <td>{{row[3]}}</td>
+      <td>{{row[4]}}</td>
+      <td>{{row[5]}}</td>
+      <td>{{row[6]}}</td>
+      {% endfor %}
+    </tr>
+  </table>
