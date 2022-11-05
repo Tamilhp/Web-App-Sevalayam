@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Sankara Sevalayam</title>
+  <style>
+    .button {
+      background-color: #53a5b0;
+      border: none;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+    .center {
+      text-align: center;
+    }
+    div {
+      text-align: center;
+    }
+    
+  </style>
+
+  <body>
+    <div id = "Enter Data">
+    <h1>Enter the data</h1>
+    <form action="/savedata" method = "POST">
+        <p>Name <input type = "text" name = "Name" required/></p>
+        <p>Mobile No 1 <input type = "text" name = "Mobile No 1" minlength = "10" maxlength = "10" required/></p>
+        <p>Mobile No 2 <input type = "text" name = "Mobile No 2" minlength = "10" maxlength = "10"/></p>
+        <p><label for="Occasion">Occasion</label>
+            <select id="Occasion" name="Occasion">
+              <option value="Birthday">B - Birthday</option>
+              <option value="Wedding Day">W - Wedding Day</option>
+              <option value="Ninaivu naal">N - Ninaivu Naal</option>
+              <option value="others">Others</option>
+            </select></p>
+        <p><label for="start">Occasion Date</label>
+            <input type="date" id="start" name="trip-start"
+                   value= Date()
+                   min="2020-01-01" max="2100-12-31"></p>
+        <p>Address <input type = "text" name = "Address" /></p>
+        <p><input type = "submit" value = "Submit" /></p>
+     </form>
+     </div>
+  </body>
+  
