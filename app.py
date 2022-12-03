@@ -2,7 +2,6 @@ import pandas as pd
 import sqlite3
 from flask import Flask, render_template, request
 
-from flask import Flask,render_template,request
  
 app = Flask(__name__)
  
@@ -28,7 +27,7 @@ def data():
         for key, value in form_data.items():
             values.append(value)
         with sqlite3.connect(r"E:\Tamil Selvan\Sqlite sevalayam\sponsors.db") as con:
-            command = "SELECT `Name`, `Mobile no 1`,`Mobile no 2`, `Occasion`, DATE(`Occasion Date`) FROM November WHERE strftime('%d',`Occasion Date`) = ? AND strftime('%m',`Occasion Date`)= ?"
+            command = "SELECT `Name`, CAST(`Mobile no 1` as integer),`Mobile no 2`, `Occasion`, DATE(`Occasion Date`) FROM November WHERE strftime('%d',`Occasion Date`) = ? AND strftime('%m',`Occasion Date`)= ?"
             cur = con.execute(command, (values[0],values[1],))
         return render_template('display_data.html',form_data = cur)
  
@@ -46,4 +45,5 @@ def savedata():
             con.execute(command, (values[0], values[1], values[2], values[3], values[4], values[5]))
             con.commit()
         return render_template('newdata.html')
+        
 app.run(host='localhost', port=8080)
